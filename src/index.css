@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 14% 96%;
+    --foreground: 220 20% 14%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 14%;
+
+    --primary: 220 72% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 94%;
+    --secondary-foreground: 220 20% 30%;
+
+    --muted: 220 14% 92%;
+    --muted-foreground: 220 10% 46%;
+
+    --accent: 220 14% 94%;
+    --accent-foreground: 220 20% 14%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 90%;
+    --input: 220 13% 90%;
+    --ring: 220 72% 50%;
+
+    --radius: 0.5rem;
+
+    /* Column header colors */
+    --column-backlog: 220 72% 50%;
+    --column-progress: 35 92% 50%;
+    --column-review: 280 60% 55%;
+    --column-done: 145 65% 42%;
+
+    /* Kanban-specific tokens */
+    --board-bg: 220 14% 96%;
+    --column-bg: 220 14% 97%;
+    --task-shadow: 220 20% 80%;
+    --drag-overlay: 220 72% 50%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 20% 10%;
+    --foreground: 220 14% 92%;
+    --card: 220 20% 14%;
+    --card-foreground: 220 14% 92%;
+    --popover: 220 20% 14%;
+    --popover-foreground: 220 14% 92%;
+    --primary: 220 72% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 220 14% 85%;
+    --muted: 220 20% 18%;
+    --muted-foreground: 220 10% 55%;
+    --accent: 220 20% 18%;
+    --accent-foreground: 220 14% 92%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 220 72% 60%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Drag and drop animations */
+@keyframes task-pickup {
+  0% { transform: scale(1); box-shadow: 0 1px 3px hsl(var(--task-shadow) / 0.3); }
+  100% { transform: scale(1.03); box-shadow: 0 12px 24px hsl(var(--task-shadow) / 0.25); }
+}
+
+@keyframes task-drop {
+  0% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+.task-dragging {
+  animation: task-pickup 0.15s ease-out forwards;
+  z-index: 50;
+}
+
+.task-dropped {
+  animation: task-drop 0.2s ease-out forwards;
+}
+
+/* Column scroll styling */
+.column-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.column-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.column-scroll::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.2);
+  border-radius: 4px;
+}
+
+.column-scroll::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.35);
+}

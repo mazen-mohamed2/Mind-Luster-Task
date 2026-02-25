@@ -1,0 +1,81 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "API integration",
+      "description": "Connect frontend to REST API endpoints",
+      "column": "backlog",
+      "position": 1
+    },
+    {
+      "id": "2",
+      "title": "Unit tests",
+      "description": "Write tests for utility functions and hooks",
+      "column": "backlog",
+      "position": 2
+    },
+    {
+      "id": "3",
+      "title": "Performance audit",
+      "description": "Lighthouse scores and bundle analysis",
+      "column": "backlog",
+      "position": 3
+    },
+    {
+      "id": "4",
+      "title": "Notification system",
+      "description": "Toast notifications and in-app alerts",
+      "column": "backlog",
+      "position": 4
+    },
+    {
+      "id": "5",
+      "title": "User settings page",
+      "description": "Profile editing, preferences, and account management",
+      "column": "backlog",
+      "position": 5
+    },
+    {
+      "id": "6",
+      "title": "Authentication flow",
+      "description": "Implement login, signup, and password reset screens",
+      "column": "in_progress",
+      "position": 2
+    },
+    {
+      "id": "7",
+      "title": "File upload component",
+      "description": "Drag and drop file upload with preview",
+      "column": "review",
+      "position": 2
+    },
+    {
+      "id": "8",
+      "title": "Dark mode support",
+      "description": "Add theme toggle and CSS variable switching",
+      "column": "review",
+      "position": 3
+    },
+    {
+      "id": "9",
+      "title": "Dashboard layout",
+      "description": "Build responsive sidebar and main content area",
+      "column": "review",
+      "position": 4
+    },
+    {
+      "id": "10",
+      "title": "Design system tokens",
+      "description": "Set up color palette, typography, and spacing scales",
+      "column": "done",
+      "position": 1
+    },
+    {
+      "id": "a05e",
+      "title": "mazen",
+      "description": "dfdi jodfi jofvmoi fm",
+      "column": "in_progress",
+      "position": 2
+    }
+  ]
+}
